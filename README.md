@@ -1,4 +1,4 @@
-# 🔐 Text Encoder API (Grid Cipher)
+# 🔐 Text Coder API (Grid Cipher)
 
 ## 📌 Sobre o projeto
 
