@@ -1,67 +1,122 @@
-# 🚀 Text Encoder API (Grid-Based Cipher)
-
-API desenvolvida em Python para codificação e decodificação de texto utilizando um sistema baseado em matriz (grid), inspirado na lógica da cifra de Polybius.
-
-A aplicação converte caracteres em coordenadas (linha, coluna) dentro de uma estrutura tabular e também realiza o processo inverso, permitindo reconstruir o texto original a partir das coordenadas.
-
----
+# 🔐 Text Encoder API (Grid Cipher)
 
 ## 📌 Sobre o projeto
 
-Este projeto foi criado com o objetivo de praticar conceitos fundamentais de programação, incluindo manipulação de dados, criação de funções e desenvolvimento de APIs.
+Este projeto tem como objetivo desenvolver uma API capaz de codificar e decodificar textos utilizando um sistema baseado em matriz (grid), onde cada caractere é representado por uma coordenada (linha, coluna).
 
-A solução utiliza um DataFrame como base para mapear os caracteres e expõe essa lógica através de uma API REST construída com Flask.
+A aplicação foi criada com foco em praticar conceitos fundamentais de programação e simular a construção de um serviço real, onde dados são processados via requisições HTTP e retornados em formato estruturado.
 
 ---
 
-## ⚙️ Tecnologias utilizadas
+## 🎯 Objetivos do projeto
+
+* Implementar um sistema de codificação de texto baseado em coordenadas
+* Desenvolver o processo inverso (decodificação)
+* Praticar construção de APIs com Python
+* Trabalhar com transformação e mapeamento de dados
+
+---
+
+## 🛠️ Tecnologias utilizadas
 
 * Python
-* Flask
 * Pandas
+* Flask
 
 ---
 
-## 🔄 Funcionalidades
+## 🧹 Etapas do projeto
 
-* Codificação de texto em coordenadas
-* Decodificação de coordenadas para texto
-* Processamento via requisições HTTP (POST)
-* Retorno estruturado em JSON
-  
+### Estruturação dos dados
+
+* Criação de um DataFrame personalizado
+* Definição de uma matriz de caracteres
+* Organização das posições (linha e coluna)
+
+### Lógica de codificação
+
+* Conversão de caracteres em coordenadas
+* Tratamento de espaços e caracteres não encontrados
+* Estruturação da saída em formato de texto
+
+### Lógica de decodificação
+
+* Leitura de coordenadas
+* Conversão de coordenadas em caracteres
+* Reconstrução do texto original
+
+### Desenvolvimento da API
+
+* Criação de endpoints com Flask
+* Recebimento de dados via requisição POST
+* Retorno de respostas em JSON
+
 ---
 
-## 🧪 Testes
+## 🔌 Endpoints
 
-A API pode ser testada utilizando ferramentas como:
+### 📍 Codificar texto
 
-* Postman
-* Hoppscotch
-* Ou via script em Python com a biblioteca `requests`
+**POST** `/codificar`
+
+Entrada:
+
+```json id="y1b2c3"
+{
+  "texto": "abc"
+}
+```
+
+Saída:
+
+```json id="z4x5v6"
+{
+  "resultado": "1,1 1,2 1,3"
+}
+```
 
 ---
 
-## 📈 Possíveis melhorias
+### 📍 Decodificar coordenadas
 
-* Otimização da busca no DataFrame (melhoria de performance)
-* Tratamento de erros mais robusto
-* Suporte a novos conjuntos de caracteres
-* Deploy da aplicação
+**POST** `/decodificar`
+
+Entrada:
+
+```json id="a7s8d9"
+{
+  "coords": "1,1 1,2 1,3"
+}
+```
+
+Saída:
+
+```json id="f0g1h2"
+{
+  "resultado": "abc"
+}
+```
 
 ---
 
-## 📚 Aprendizados
-
-Durante o desenvolvimento deste projeto foram aplicados conceitos como:
+## 💡 Principais aprendizados
 
 * Manipulação de dados com DataFrame
-* Estruturação de funções reutilizáveis
+* Estruturação de funções em Python
 * Criação de APIs REST com Flask
-* Transformação e mapeamento de dados
+* Processamento de dados via requisições HTTP
 
 ---
 
-## 👨‍💻 Autor
+## 🚀 Possíveis melhorias futuras
 
-Desenvolvido por **Daniel Brum**
+* Otimização da busca no DataFrame
+* Implementação de tratamento de erros mais robusto
+* Suporte a novos conjuntos de caracteres
+* Deploy da API em ambiente online
 
+---
+
+## 📌 Autor
+
+Projeto desenvolvido por **Daniel Brum** com foco em aprendizado e evolução na área de programação e dados.
