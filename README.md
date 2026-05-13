@@ -1,122 +1,139 @@
 # 🔐 Text Coder API (Grid Cipher)
 
-## 📌 Sobre o projeto
+---
 
-Este projeto tem como objetivo desenvolver uma API capaz de codificar e decodificar textos utilizando um sistema baseado em matriz (grid), onde cada caractere é representado por uma coordenada (linha, coluna).
+## 📌 About the Project
 
-A aplicação foi criada com foco em praticar conceitos fundamentais de programação e simular a construção de um serviço real, onde dados são processados via requisições HTTP e retornados em formato estruturado.
+This project aims to develop an API capable of encoding and decoding text using a grid-based system, where each character is represented by a coordinate (row, column).
+
+The application was created to practice fundamental programming concepts and simulate the development of a real-world service, where data is processed through HTTP requests and returned in a structured format.
 
 ---
 
-## 🎯 Objetivos do projeto
+## 🎯 Project Objectives
 
-* Implementar um sistema de codificação de texto baseado em coordenadas
-* Desenvolver o processo inverso (decodificação)
-* Praticar construção de APIs com Python
-* Trabalhar com transformação e mapeamento de dados
-
----
-
-## 🛠️ Tecnologias utilizadas
-
-* Python
-* Pandas
-* Flask
+- Implement a coordinate-based text encoding system
+- Develop the reverse process (decoding)
+- Practice API development with Python
+- Work with data transformation and mapping
 
 ---
 
-## 🧹 Etapas do projeto
+## 🛠️ Technologies Used
 
-### Estruturação dos dados
+- Python 🐍
+- Pandas
+- Flask
 
-* Criação de um DataFrame personalizado
-* Definição de uma matriz de caracteres
-* Organização das posições (linha e coluna)
+---
 
-### Lógica de codificação
+## 🧱 Project Stages
 
-* Conversão de caracteres em coordenadas
-* Tratamento de espaços e caracteres não encontrados
-* Estruturação da saída em formato de texto
+### 1. 📥 Data Structuring
+- Creation of a custom DataFrame
+- Definition of a character matrix
+- Organization of row and column positions
 
-### Lógica de decodificação
+### 2. 🔐 Encoding Logic
+- Converting characters into coordinates
+- Handling spaces and missing characters
+- Structuring the encoded output
 
-* Leitura de coordenadas
-* Conversão de coordenadas em caracteres
-* Reconstrução do texto original
+### 3. 🔓 Decoding Logic
+- Reading coordinates
+- Converting coordinates back into characters
+- Reconstructing the original text
 
-### Desenvolvimento da API
-
-* Criação de endpoints com Flask
-* Recebimento de dados via requisição POST
-* Retorno de respostas em JSON
+### 4. 🌐 API Development
+- Creating endpoints with Flask
+- Receiving data through POST requests
+- Returning responses in JSON format
 
 ---
 
 ## 🔌 Endpoints
 
-### 📍 Codificar texto
+### 📍 Encode Text
 
-**POST** `/codificar`
+**POST** `/encode`
 
-Entrada:
+Input:
 
-```json id="y1b2c3"
+```json
 {
-  "texto": "abc"
+  "text": "abc"
 }
 ```
 
-Saída:
+Output:
 
-```json id="z4x5v6"
+```json
 {
-  "resultado": "1,1 1,2 1,3"
+  "result": "1,1 1,2 1,3"
 }
 ```
 
 ---
 
-### 📍 Decodificar coordenadas
+### 📍 Decode Coordinates
 
-**POST** `/decodificar`
+**POST** `/decode`
 
-Entrada:
+Input:
 
-```json id="a7s8d9"
+```json
 {
   "coords": "1,1 1,2 1,3"
 }
 ```
 
-Saída:
+Output:
 
-```json id="f0g1h2"
+```json
 {
-  "resultado": "abc"
+  "result": "abc"
 }
 ```
 
 ---
 
-## 💡 Principais aprendizados
+## 📊 API Workflow
 
-* Manipulação de dados com DataFrame
-* Estruturação de funções em Python
-* Criação de APIs REST com Flask
-* Processamento de dados via requisições HTTP
+### 🔐 Encoding Process
+1. The API receives a text string
+2. Each character is searched in the grid
+3. The character is converted into coordinates
+4. The encoded response is returned
 
----
-
-## 🚀 Possíveis melhorias futuras
-
-* Otimização da busca no DataFrame
-* Implementação de tratamento de erros mais robusto
-* Suporte a novos conjuntos de caracteres
-* Deploy da API em ambiente online
+### 🔓 Decoding Process
+1. The API receives coordinate pairs
+2. Each coordinate is mapped back to a character
+3. The original text is reconstructed
+4. The decoded response is returned
 
 ---
 
-## 📌 Autor
+## 💡 Key Learnings
 
-Projeto desenvolvido por **Daniel Brum** com foco em aprendizado e evolução na área de programação e dados.
+- Data manipulation with Pandas DataFrames
+- Structuring Python functions and logic
+- Building REST APIs with Flask
+- Processing data through HTTP requests
+- Implementing text transformation systems
+
+---
+
+## 🚀 Future Improvements
+
+- Optimize coordinate search performance
+- Implement more robust error handling
+- Support additional character sets and symbols
+- Add authentication and rate limiting
+- Deploy the API to a cloud environment
+- Create interactive API documentation
+
+---
+
+## 📌 Author
+
+Project developed by **Daniel Brum** with a focus on learning, backend development, and data processing using Python.
